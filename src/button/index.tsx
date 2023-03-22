@@ -6,10 +6,11 @@ interface Buttoncomp {
   title: string;
   email?: boolean;
   password?: boolean;
+  passcon?: boolean;
   onpress: () => void;
 }
 
-const Button = ({title, email, password, onpress}: Buttoncomp) => {
+const Button = ({title, email, password, onpress, passcon}: Buttoncomp) => {
   const test = () => {
     if (!email) {
       Alert.alert('Enter Valid Email');
@@ -21,8 +22,7 @@ const Button = ({title, email, password, onpress}: Buttoncomp) => {
   };
   return (
     <Pressable
-      style={[styles.bttn, {opacity: email && password ? 1 : 0.5}]}
-      disabled={false}
+      style={[styles.bttn, {opacity: email && password && passcon ? 1 : 0.5}]}
       onPress={onpress}>
       <Text style={styles.bttntext}>{title}</Text>
     </Pressable>

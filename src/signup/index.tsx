@@ -7,6 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 const SignUp = props => {
   // console.log(props);
   const input2 = useRef();
+  const input3 = useRef();
   const navigator = useNavigation();
   const [emai, setEmai] = useState(false);
   const [emailva, setEmailva] = useState('');
@@ -33,14 +34,19 @@ const SignUp = props => {
     }
   };
   const ConfirmPasswordHandler = val => {
+    console.log('val: ', val);
     setConfirm(val);
-    if (confirm !== passVa) {
-      console.log('false');
-      setPasscon(false);
-    } else {
-      console.log('true');
+    console.log('Confirm Password: ', confirm);
+    console.log('-------------------------------------');
+    if (confirm === passVa) {
+      // console.log(passVa);
       setPasscon(true);
+    } else {
+      // console.log('false');
+      setPasscon(false);
     }
+
+    // console.log('Password', passVa);
   };
   const loginHandler = () => {
     if (!emailRegex.test(emailva)) {
@@ -59,32 +65,37 @@ const SignUp = props => {
   return (
     <View>
       <ImageBackground
-        source={require('../assets/images/backgroundImage.png')}
+        source={require('../assets/images/signup.jpg')}
         resizeMode="cover"
         style={styles.background}>
+        <Text style={styles.signuptext}> Sign Up Here</Text>
         <TextInput
           style={styles.input}
-          placeholderTextColor="white"
-          placeholder="enter your email"
+          placeholderTextColor="#3C4C1E"
+          placeholder="Your email"
           onChangeText={emailHandler}
+          returnKeyType={'next'}
+          blurOnSubmit={false}
           onSubmitEditing={() => input2.current.focus()}
         />
         <TextInput
           onChangeText={passwordHandler}
           style={styles.input}
-          placeholderTextColor="white"
-          placeholder="enter your Password"
-          secureTextEntry={true}
+          placeholderTextColor="#3C4C1E"
+          placeholder="Your Password"
+          // secureTextEntry={true}
+          blurOnSubmit={false}
+          returnKeyType={'next'}
           ref={input2}
-          onSubmitEditing={loginHandler}
+          onSubmitEditing={() => input3.current.focus()}
         />
         <TextInput
-          onChangeText={ConfirmPasswordHandler}
+          onChangeText={val => ConfirmPasswordHandler(val)}
           style={styles.input}
-          placeholderTextColor="white"
+          placeholderTextColor="#3C4C1E"
           placeholder="Re-enter Password"
-          secureTextEntry={true}
-          ref={input2}
+          // secureTextEntry={true}
+          ref={input3}
           onSubmitEditing={loginHandler}
         />
 
@@ -93,6 +104,7 @@ const SignUp = props => {
           onpress={loginHandler}
           email={emai}
           password={Passwor}
+          passcon={passcon}
         />
       </ImageBackground>
     </View>

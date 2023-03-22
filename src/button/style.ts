@@ -3,11 +3,12 @@ import fonts from '../assets/fonts';
 
 const styles = StyleSheet.create({
   bttn: {
-    backgroundColor: '#FFDEB9',
+    backgroundColor: '#DFBFFE',
     padding: 10,
-    marginVertical: 5,
-    marginHorizontal: 50,
+    marginVertical: 20,
+    marginHorizontal: 70,
     borderRadius: 20,
+    borderWidth: 1,
   },
   bttntext: {
     textAlign: 'center',

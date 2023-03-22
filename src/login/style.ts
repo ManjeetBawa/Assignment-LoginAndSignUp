@@ -9,18 +9,22 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   logo: {
-    height: 90,
-    width: 90,
+    height: 150,
+    width: 150,
   },
   logocontainer: {
     marginTop: 40,
     alignItems: 'center',
   },
   input: {
-    backgroundColor: '#FE6244',
+    borderWidth: 1,
+    backgroundColor: '#F0DFFF',
     borderRadius: 10,
     margin: 10,
-    color: 'white',
+    color: '#3C4C1E',
+    shadowColor: 'black',
+    elevation: 10,
+    marginHorizontal: 35,
   },
   signbox: {
     flexDirection: 'row',
@@ -29,28 +33,33 @@ const styles = StyleSheet.create({
     marginTop: 19,
   },
   signtext: {
-    color: 'white',
+    color: 'black',
     fontFamily: fonts.BOLd,
     fontSize: 26,
   },
-  signbttn : {
-    backgroundColor: '#FFDEB9',
+  signbttn: {
+    backgroundColor: '#F7B671',
     padding: 9,
+    paddingHorizontal: 20,
     borderRadius: 15,
   },
   signup: {
-    color: 'black',
+    color: '#3C4C1E',
     fontSize: 20,
     fontFamily: fonts.BOLd,
   },
   passbox: {
+    borderWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#FE6244',
+    backgroundColor: '#F0DFFF',
     paddingHorizontal: 7,
     margin: 10,
+    marginHorizontal: 35,
     borderRadius: 10,
+    shadowColor: 'black',
+    elevation: 10,
   },
   eyeimage: {
     height: 30,
@@ -58,8 +67,12 @@ const styles = StyleSheet.create({
   },
   imagetext: {
     flex: 1,
-    color: 'white',
+    color: '#3C4C1E',
+    
   },
+  container: {
+    marginTop: 60,
+  }
 });
 
 export default styles;

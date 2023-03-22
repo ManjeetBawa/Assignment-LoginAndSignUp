@@ -1,14 +1,25 @@
 import {StyleSheet} from 'react-native';
+import fonts from '../assets/fonts';
 const styles = StyleSheet.create({
   background: {
     height: '100%',
   },
   input: {
-    backgroundColor: '#FE6244',
+    backgroundColor: '#F0DFFF',
+    borderWidth: 1,
     borderRadius: 10,
     margin: 10,
-    color: 'white',
+    marginHorizontal: 35,
+    paddingLeft: 10,
+    // color: 'balck',
   },
+  signuptext: {
+    fontFamily:fonts.BOLd,
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 10,
+    color: 'black',
+  }
 });
 
 export default styles;
