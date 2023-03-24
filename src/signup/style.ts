@@ -11,6 +11,8 @@ const styles = StyleSheet.create({
     margin: 10,
     marginHorizontal: 35,
     paddingLeft: 10,
+    shadowColor: 'black',
+    elevation: 10,
     // color: 'balck',
   },
   signuptext: {

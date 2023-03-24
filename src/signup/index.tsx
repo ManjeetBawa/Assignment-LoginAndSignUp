@@ -1,8 +1,9 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styles from './style';
 import {Text, View, ImageBackground, TextInput, Alert} from 'react-native';
 import Button from '../button';
 import {useNavigation} from '@react-navigation/native';
+import Snackbar from 'react-native-snackbar';
 
 const SignUp = props => {
   // console.log(props);
@@ -34,20 +35,18 @@ const SignUp = props => {
     }
   };
   const ConfirmPasswordHandler = val => {
-    console.log('val: ', val);
+    // console.log('val: ', val);
     setConfirm(val);
-    console.log('Confirm Password: ', confirm);
-    console.log('-------------------------------------');
+  };
+
+  useEffect(() => {
     if (confirm === passVa) {
-      // console.log(passVa);
       setPasscon(true);
     } else {
-      // console.log('false');
       setPasscon(false);
     }
+  }, [confirm, passVa]);
 
-    // console.log('Password', passVa);
-  };
   const loginHandler = () => {
     if (!emailRegex.test(emailva)) {
       Alert.alert('not a valid email');
@@ -59,6 +58,10 @@ const SignUp = props => {
       Alert.alert('Please Enter Same Password');
       return null;
     } else {
+      Snackbar.show({
+        text: 'Account Created',
+        duration: Snackbar.LENGTH_SHORT,
+      });
       navigator.navigate('Login');
     }
   };
@@ -90,7 +93,11 @@ const SignUp = props => {
           onSubmitEditing={() => input3.current.focus()}
         />
         <TextInput
-          onChangeText={val => ConfirmPasswordHandler(val)}
+          // onEndEditing={value => {
+          //   console.log(value.nativeEvent.text);
+          // }}
+          onChangeText={ConfirmPasswordHandler}
+          value={confirm}
           style={styles.input}
           placeholderTextColor="#3C4C1E"
           placeholder="Re-enter Password"

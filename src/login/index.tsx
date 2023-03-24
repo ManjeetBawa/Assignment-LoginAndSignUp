@@ -77,6 +77,8 @@ const Login = props => {
         style={styles.background}>
         <View style={styles.container}>
           <View style={styles.logocontainer}>
+            <Text style={styles.heading}>BigBasket</Text>
+            <Text style={styles.disc}>Discover the best foods and drinks in Chandigarh</Text>
             <Image
               source={require('../assets/images/logo.png')}
               style={styles.logo}

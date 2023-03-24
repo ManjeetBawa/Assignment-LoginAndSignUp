@@ -9,6 +9,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 70,
     borderRadius: 20,
     borderWidth: 1,
+    shadowColor: 'black',
+    elevation: 10,
   },
   bttntext: {
     textAlign: 'center',

@@ -1,6 +1,15 @@
 import {StyleSheet} from 'react-native';
 import fonts from '../assets/fonts';
 const styles = StyleSheet.create({
+  heading: {
+    fontFamily: fonts.ITALIC,
+    fontSize: 40,
+  },
+  disc: {
+    fontSize: 15,
+    fontFamily: fonts.BOLd,
+    margin: 10,
+  },
   testing: {
     fontSize: 30,
     fontFamily: fonts.BOLd,
@@ -19,6 +28,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     backgroundColor: '#F0DFFF',
+    paddingLeft: 10,
     borderRadius: 10,
     margin: 10,
     color: '#3C4C1E',
@@ -68,11 +78,7 @@ const styles = StyleSheet.create({
   imagetext: {
     flex: 1,
     color: '#3C4C1E',
-    
   },
-  container: {
-    marginTop: 60,
-  }
 });
 
 export default styles;
